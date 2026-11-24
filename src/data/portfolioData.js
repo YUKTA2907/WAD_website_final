@@ -1,3 +1,10 @@
+const BASE = import.meta.env.BASE_URL || '/';
+const getAssetUrl = (path) => {
+  if (!path || path.startsWith('http://') || path.startsWith('https://')) return path;
+  const clean = path.startsWith('/') ? path.slice(1) : path;
+  return `${BASE}${clean}`;
+};
+
 export const personalInfo = {
   name: "Maithrayi S Viraktamath",
   initials: "MSV",
@@ -28,10 +35,10 @@ export const personalInfo = {
     "Machine Learning"
   ],
   resumes: {
-    hardware: "/resumes/Hardware_Resume.pdf",
-    software: "/resumes/Software_Resume.pdf"
+    hardware: getAssetUrl("/resumes/Hardware_Resume.pdf"),
+    software: getAssetUrl("/resumes/Software_Resume.pdf")
   },
-  profileImage: "/images/profile.jpg"
+  profileImage: getAssetUrl("/images/profile.jpg")
 };
 
 export const technicalInterests = [
@@ -432,8 +439,8 @@ export const certifications = [
     issuer: "AWS Academy / Amazon Web Services",
     date: "June 2025",
     credentialUrl: "https://www.credly.com/go/7TdlNq0A",
-    fileUrl: "/certificates/AWS_ML_NLP_Certificate.pdf",
-    imageUrl: "/certificates/AWS_ML_NLP_Certificate.png",
+    fileUrl: getAssetUrl("/certificates/AWS_ML_NLP_Certificate.pdf"),
+    imageUrl: getAssetUrl("/certificates/AWS_ML_NLP_Certificate.png"),
     category: "Cloud & Machine Learning",
     description: "Hands-on curriculum covering natural language processing architectures, text preprocessing, embeddings, transformer models, and cloud model deployment on AWS."
   },
@@ -444,8 +451,8 @@ export const certifications = [
     date: "May 2025 – July 2025",
     credentialId: "EXCEL-896309618eb0eeb1",
     credentialUrl: "https://finlatics.com/credentialscheck",
-    fileUrl: "/certificates/Finlatics_MS_Excel_Certificate.pdf",
-    imageUrl: "/certificates/Finlatics_MS_Excel_Certificate.png",
+    fileUrl: getAssetUrl("/certificates/Finlatics_MS_Excel_Certificate.pdf"),
+    imageUrl: getAssetUrl("/certificates/Finlatics_MS_Excel_Certificate.png"),
     category: "Data Analysis",
     description: "Advanced data analytics, lookup functions, pivot calculations, scenario analysis, and statistical data visualization workflows."
   },
@@ -455,8 +462,8 @@ export const certifications = [
     issuer: "NPTEL / IIT Kharagpur (Govt. of India)",
     date: "Feb 2026 – Apr 2026",
     credentialId: "NPTEL26HS64S350201881",
-    fileUrl: "/certificates/NPTEL_Certificate.pdf",
-    imageUrl: "/certificates/NPTEL_Certificate.png",
+    fileUrl: getAssetUrl("/certificates/NPTEL_Certificate.pdf"),
+    imageUrl: getAssetUrl("/certificates/NPTEL_Certificate.png"),
     category: "Academic & Behavioral Science",
     description: "8-week intensive certification with 81% Elite score examining empirical psychology, cognitive ergonomics, and emotional wellbeing."
   },
