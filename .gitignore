@@ -17,6 +17,8 @@ dist-ssr
 .env
 .env.*
 !.env.example
+# Allow .env.production — it only sets the GitHub Pages base path (no secrets)
+!.env.production
 
 # Python
 __pycache__/
